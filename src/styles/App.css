@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+body{
+  background: #131218;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.title{
+  color: #6f6d7c;
+}
+
+.form-control{
+  background-color: #24232B;
+  border: none;
+  border-radius: 0;
+  min-height: 45px;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #24232B;
+  border-color: #89b492;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(137 180 146);
+}
+.pass-length{
+  color: #a4ffaf;
+}
+.card{
+  border-radius: 0;
+  background-color: #24232B;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  /* width: 15rem; */
+}
+
+.form-check-input:checked {
+  background-color: #a3ffac;
+  border-color: #a3ffac;
+}
+
+.form-check-input:focus {
+  /* border-color: #86b7fe;
+  outline: 0; */
+  box-shadow: 0 0 0 0.25rem rgb(164 255 175 / 25%);
+}
+
+.content-strength{
+  height: 45px;
+  background-color: #18171f;
+}
+
+.btn-success{
+  background-color: #a4ffaf;
+  border-color: #a4ffaf;
+  color: #0c0b10;
+  font-weight: 700;
+}
+
+.btn:hover {
+  color: #a4ffaf;
+  background-color: transparent;
+  border-color: #a4ffaf;
+}
