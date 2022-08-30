@@ -13,7 +13,8 @@ const CardGenerator = () => {
           </div>
           <div className="col-12">
             <Form.Range
-            //  bsPrefix="rangeForm"
+              //  bsPrefix="rangeForm"
+              className="slider"
               min="0"
               max="24"
               defaultValue={0}
@@ -27,7 +28,6 @@ const CardGenerator = () => {
                 type="checkbox"
                 value=""
                 id="uppercase"
-                
               />
               <label className="form-check-label" htmlFor="uppercase">
                 Include Uppercase Letters
@@ -40,7 +40,6 @@ const CardGenerator = () => {
                 type="checkbox"
                 value=""
                 id="lowercase"
-                
               />
               <label className="form-check-label" htmlFor="lowercase">
                 Include Lowercase Letters
@@ -53,7 +52,6 @@ const CardGenerator = () => {
                 type="checkbox"
                 value=""
                 id="numbers"
-                
               />
               <label className="form-check-label" htmlFor="numbers">
                 Include Numbers
@@ -66,7 +64,6 @@ const CardGenerator = () => {
                 type="checkbox"
                 value=""
                 id="symbols"
-                
               />
               <label className="form-check-label" htmlFor="symbols">
                 Include Symbols
@@ -75,9 +72,13 @@ const CardGenerator = () => {
           </div>
           <div className="col-12 px-3 d-flex flex-row flex-wrap justify-content-between align-items-center content-strength my-3">
             <span className="text-muted fw-bold">STRENGTH</span>
-            <div></div>
+            <div>
+              <h5 className="text-white fw-bold m-0">BASIC 🥵</h5>
+            </div>
           </div>
-          <button type="button" class="btn btn-success btn-block rounded-0">GENERATE →</button>
+          <button type="button" className="btn btn-success btn-block rounded-0">
+            GENERATE →
+          </button>
         </div>
       </div>
     </>

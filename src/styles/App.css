@@ -3,10 +3,33 @@
 body{
   background: #131218;
   font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(270deg, #3a1c71, #d76d77, #ffaf7b);
+  background-size: 600% 600%;
+  
+  -webkit-animation: glitch 9s ease infinite;
+  -moz-animation: glitch 9s ease infinite;
+  animation: glitch 9s ease infinite;
+}
+
+
+@-webkit-keyframes glitch {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes glitch {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes glitch {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 .title{
-  color: #6f6d7c;
+  color: #fff;
 }
 
 .form-control{
@@ -29,14 +52,6 @@ body{
 .card{
   border-radius: 0;
   background-color: #24232B;
-}
-
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background: transparent;
-  cursor: pointer;
-  /* width: 15rem; */
 }
 
 .form-check-input:checked {
@@ -66,4 +81,41 @@ input[type="range"] {
   color: #a4ffaf;
   background-color: transparent;
   border-color: #a4ffaf;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: rgb(253,187,45);
+background: -moz-linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+background: linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdbb2d",endColorstr="#22c1c3",GradientType=1);
+  height: 5px;
+  }
+  input[type=range]:focus {
+  outline: none;
+  }
+  input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  background: rgb(253,187,45);
+  background: -moz-linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+  background: linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdbb2d",endColorstr="#22c1c3",GradientType=1);
+  height: 5px;
+  }
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #e6e6ea;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #e6e6ea;
+  cursor: pointer;
 }
