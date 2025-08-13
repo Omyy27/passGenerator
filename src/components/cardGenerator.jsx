@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import generator from "generate-password";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 const CardGenerator = () => {
-  const [range, setRange] = useState(4);
+  const [range, setRange] = useState(14);
   const [checkeds, setCheckeds] = useState([1, 2, 3, 4]);
   const [strg, setStrg] = useState([]);
   const [show, setShow] = useState(false);
@@ -65,18 +65,8 @@ const CardGenerator = () => {
     setStrg(pwd);
   };
 
-  // async function copyPageUrl(e) {
-  //   try {
-  //     await navigator.clipboard.writeText(e.target.value);
-  //     console.log('Page URL copied to clipboard');
-  //     setShow(true);
-
-  //   } catch (err) {
-  //     console.error('Failed to copy: ', err);
-  //   }
-  // }
-
   function copyPageUrl(e) {
+    if(e.currentTarget.value === '' || e.currentTarget.value === null) return;
     e.target.select();
     document.execCommand("copy");
     setShow(true);
@@ -113,11 +103,10 @@ const CardGenerator = () => {
           </div>
           <div className="col-12">
             <Form.Range
-              //  bsPrefix="rangeForm"
               className="slider"
               min="4"
               max="24"
-              defaultValue={4}
+              defaultValue={range ?? 14}
               onChange={(e) => setRange(e.target.value || 0)}
             />
           </div>
@@ -128,7 +117,6 @@ const CardGenerator = () => {
                   className="form-check-input"
                   type="checkbox"
                   value={c.id}
-                  // id="uppercase"
                   checked={
                     checkeds.lastIndexOf(Number(c.id)) >= 0 ? true : false
                   }
@@ -139,7 +127,7 @@ const CardGenerator = () => {
             ))}
           </div>
           <div className="col-12 px-3 d-flex flex-row flex-wrap justify-content-between align-items-center content-strength my-3">
-            <span className="text-muted fw-bold">STRENGTH</span>
+            <span className="text-white fw-bold">STRENGTH</span>
             <div>
               <h5 className="text-white fw-bold m-0 text-uppercase">{strength}</h5>
             </div>

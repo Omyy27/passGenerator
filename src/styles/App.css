@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
 
 body{
-  background: #131218;
+  background: #5E6873;
   font-family: 'Roboto Mono', monospace;
-  background: linear-gradient(270deg, #3a1c71, #d76d77, #ffaf7b);
   background-size: 600% 600%;
   
   -webkit-animation: glitch 9s ease infinite;
@@ -52,6 +51,18 @@ body{
 .card{
   border-radius: 0;
   background-color: #24232B;
+}
+
+#inputpass::placeholder{
+  color: #a4ffaf;
+  opacity: 1; /* Firefox */
+}
+
+.author-footer{
+  color: #a4ffaf;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .form-check-input:checked {

@@ -1,6 +1,6 @@
-import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import CardGenerator from "../components/cardGenerator";
+import AuthorFooter from "../components/authorFooter";
 
 const Home = () => {
 
@@ -12,6 +12,7 @@ const Home = () => {
             <h4 className="text-center title">Password Generator</h4>
             <CardGenerator />
           </Col>
+          <AuthorFooter />
         </Row>
       </Container>
     </>
