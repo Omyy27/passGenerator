@@ -2,6 +2,9 @@
 
 PassGenerator is a powerful and versatile password generation tool designed to enhance your security by creating strong, random passwords. This tool is perfect for individuals and organizations looking to improve their password management practices.
 
+<img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/3a4243c7-ed1e-40a1-bed0-6d071b67d9d6" />
+
+
 ## Features
 
 - **Customizable Password Length**: Choose the length of your passwords to suit your requirements, whether it's for a website, application, or any digital service.
