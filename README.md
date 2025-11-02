@@ -38,6 +38,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-For any inquiries or issues, please contact [Your Name](mailto:your.email@example.com).  
+For any inquiries or issues, please contact [Omyy27](mailto:omovisolutions@gmail.com).  
 
 Enhance your security with PassGenerator today!
