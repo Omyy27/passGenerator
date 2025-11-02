@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import generator from "generate-password";
+import { generatePassword } from "../utils/passwordGenerator";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -55,8 +55,8 @@ const CardGenerator = () => {
   
 
   const getPass = () => {
-    const pwd = generator.generate({
-      length: range,
+    const pwd = generatePassword({
+      length: parseInt(range),
       lowercase: checkeds.includes(2),
       uppercase: checkeds.includes(1),
       numbers: checkeds.includes(3),
@@ -136,6 +136,7 @@ const CardGenerator = () => {
             type="button"
             onClick={() => getPass(checkeds, range)}
             className="btn btn-success btn-block rounded-0"
+            disabled={checkeds.length === 0}
           >
             GENERATE →
           </button>
