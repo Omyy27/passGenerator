@@ -1,4 +1,5 @@
 # PassGenerator
+[![Netlify Status](https://api.netlify.com/api/v1/badges/57ffab9b-4491-4390-98db-ce40751bbb8c/deploy-status)](https://app.netlify.com/projects/password-script/deploys)
 
 PassGenerator is a powerful and versatile password generation tool designed to enhance your security by creating strong, random passwords. This tool is perfect for individuals and organizations looking to improve their password management practices.
 
