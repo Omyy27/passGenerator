@@ -6,6 +6,8 @@ PassGenerator is a powerful and versatile password generation tool designed to e
 <img width="1913" height="937" alt="image" src="https://github.com/user-attachments/assets/5d9f328a-bc91-424f-b386-287561294d0b" />
 <img width="332" height="720" alt="image" src="https://github.com/user-attachments/assets/117eba72-4339-468d-96db-39f61ab0aea5" />
 <img width="331" height="715" alt="image" src="https://github.com/user-attachments/assets/ef47cf7e-d097-4f52-8e2c-5168e3ecd0f9" />
+<img width="333" height="715" alt="image" src="https://github.com/user-attachments/assets/cf939499-a321-49c1-9f71-27e7a15596b8" />
+
 
 
 ## Features
