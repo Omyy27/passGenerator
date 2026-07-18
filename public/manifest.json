@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PassGenerator",
+  "name": "PassGenerator - Secure Password Tool",
+  "description": "Free online password generator with customizable length, character types, history, batch generation, and strength checker.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#18171f",
+  "background_color": "#18171f"
 }
