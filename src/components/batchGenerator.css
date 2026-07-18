@@ -1,0 +1,88 @@
+.batch-section {
+  margin-top: var(--space-4);
+}
+
+.batch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.batch-header h3 {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+.batch-controls {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.batch-controls label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.batch-count-input {
+  width: 60px;
+  padding: 4px 8px;
+  background: var(--color-bg-input);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.batch-count-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-border-focus);
+}
+
+.batch-table-wrapper {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.batch-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.batch-table th {
+  color: var(--color-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  text-align: left;
+  padding: var(--space-1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-card);
+}
+
+.batch-table td {
+  color: var(--color-text-primary);
+  padding: var(--space-1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.batch-password-cell {
+  font-family: var(--font-family);
+  letter-spacing: 2px;
+  font-size: var(--font-size-xs);
+}
+
+.batch-empty {
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--space-4);
+  font-size: var(--font-size-sm);
+}

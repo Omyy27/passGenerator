@@ -1,0 +1,71 @@
+.strength-meter {
+  width: 100%;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 6px;
+  height: 8px;
+  margin-bottom: var(--space-1);
+}
+
+.strength-bar {
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-bg-strength);
+  border-radius: 2px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  transform-origin: left;
+}
+
+.strength-bar.active {
+  animation: bar-fill 300ms ease forwards;
+}
+
+.strength-bar.active.level-1 {
+  background-color: var(--color-strength-weak);
+}
+
+.strength-bar.active.level-2 {
+  background-color: var(--color-strength-fair);
+}
+
+.strength-bar.active.level-3 {
+  background-color: var(--color-strength-strong);
+}
+
+.strength-bar.active.level-4 {
+  background-color: var(--color-strength-very-strong);
+}
+
+@keyframes bar-fill {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.strength-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.strength-label span:first-child {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.strength-label span:last-child {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+}
