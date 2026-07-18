@@ -3,20 +3,50 @@ import { generatePassword } from "../utils/passwordGenerator";
 import { calculateEntropy, getStrengthLevel, getStrengthColor } from "../utils/passwordStrength";
 import "./batchGenerator.css";
 
-export default function BatchGenerator({ charOptions, passwordLength, excludeAmbiguous }) {
+const PRESETS = {
+  weak: {
+    label: "Weak",
+    length: 8,
+    charOptions: { uppercase: false, lowercase: true, numbers: false, symbols: false },
+    excludeAmbiguous: false,
+  },
+  medium: {
+    label: "Medium",
+    length: 12,
+    charOptions: { uppercase: true, lowercase: true, numbers: true, symbols: false },
+    excludeAmbiguous: false,
+  },
+  strong: {
+    label: "Strong",
+    length: 16,
+    charOptions: { uppercase: true, lowercase: true, numbers: true, symbols: true },
+    excludeAmbiguous: false,
+  },
+  veryStrong: {
+    label: "Very Strong",
+    length: 24,
+    charOptions: { uppercase: true, lowercase: true, numbers: true, symbols: true },
+    excludeAmbiguous: true,
+  },
+};
+
+export default function BatchGenerator() {
   const [batchCount, setBatchCount] = useState(5);
+  const [complexity, setComplexity] = useState("strong");
   const [passwords, setPasswords] = useState([]);
+
+  const preset = PRESETS[complexity];
 
   function handleGenerateBatch() {
     const count = Math.min(Math.max(batchCount, 1), 25);
     const generated = [];
     for (let i = 0; i < count; i++) {
       const pwd = generatePassword({
-        length: parseInt(passwordLength),
-        ...charOptions,
-        excludeAmbiguous,
+        length: preset.length,
+        ...preset.charOptions,
+        excludeAmbiguous: preset.excludeAmbiguous,
       });
-      const entropy = calculateEntropy({ ...charOptions, length: passwordLength });
+      const entropy = calculateEntropy({ ...preset.charOptions, length: preset.length, excludeAmbiguous: preset.excludeAmbiguous });
       generated.push({ password: pwd, entropy });
     }
     setPasswords(generated);
@@ -29,7 +59,7 @@ export default function BatchGenerator({ charOptions, passwordLength, excludeAmb
 
   function handleExportCSV() {
     const header = "password,length,entropy";
-    const rows = passwords.map((p) => `"${p.password}",${passwordLength},${p.entropy}`);
+    const rows = passwords.map((p) => `"${p.password}",${preset.length},${p.entropy}`);
     const csv = [header, ...rows].join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
@@ -47,6 +77,7 @@ export default function BatchGenerator({ charOptions, passwordLength, excludeAmb
       <div className="batch-header">
         <h3>Batch Generator</h3>
       </div>
+
       <div className="batch-controls mb-3">
         <label htmlFor="batch-count">Generate</label>
         <input
@@ -61,19 +92,35 @@ export default function BatchGenerator({ charOptions, passwordLength, excludeAmb
         <span style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", marginRight: "8px" }}>
           passwords
         </span>
-        <button
-          type="button"
-          className="history-btn"
-          onClick={handleGenerateBatch}
-          disabled={!charOptions.uppercase && !charOptions.lowercase && !charOptions.numbers && !charOptions.symbols}
-        >
-          Generate Batch
-        </button>
       </div>
+
+      <div className="complexity-presets mb-3">
+        {Object.entries(PRESETS).map(([key, p]) => (
+          <button
+            key={key}
+            type="button"
+            className={`complexity-btn ${complexity === key ? "active" : ""}`}
+            onClick={() => setComplexity(key)}
+          >
+            {p.label}
+            <span className="complexity-detail">{p.length} chars</span>
+          </button>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        className="history-btn"
+        onClick={handleGenerateBatch}
+        disabled={!preset.charOptions.uppercase && !preset.charOptions.lowercase && !preset.charOptions.numbers && !preset.charOptions.symbols}
+        style={{ width: "100%" }}
+      >
+        Generate Batch
+      </button>
 
       {passwords.length > 0 && (
         <>
-          <div className="history-actions mb-2">
+          <div className="history-actions mb-2 mt-3">
             <button type="button" className="history-btn" onClick={handleCopyAll}>
               Copy All
             </button>
@@ -115,7 +162,7 @@ export default function BatchGenerator({ charOptions, passwordLength, excludeAmb
       )}
 
       {passwords.length === 0 && (
-        <div className="batch-empty">Set the count and generate a batch</div>
+        <div className="batch-empty">Select complexity and generate a batch</div>
       )}
     </div>
   );

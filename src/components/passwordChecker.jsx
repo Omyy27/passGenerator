@@ -35,7 +35,7 @@ function analyzePassword(pwd) {
 }
 
 export default function PasswordChecker() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("admin123");
 
   const analysis = useMemo(() => {
     if (!input) return null;
@@ -64,6 +64,7 @@ export default function PasswordChecker() {
         placeholder="Type a password to check..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        autoFocus
       />
       {analysis && input.length > 0 && (
         <>

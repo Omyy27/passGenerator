@@ -52,11 +52,7 @@ const Home = () => {
                     <ArrowLeftIcon /> Back
                   </button>
                   <h4 className="text-center title mb-3">Batch Generator</h4>
-                  <BatchGenerator
-                    charOptions={{ uppercase: true, lowercase: true, numbers: true, symbols: true }}
-                    passwordLength={14}
-                    excludeAmbiguous={false}
-                  />
+                  <BatchGenerator />
                 </>
               )}
             </>
