@@ -1,0 +1,57 @@
+.floating-contact {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(24, 23, 31, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px 0 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: none;
+  padding: 6px 0;
+}
+
+.floating-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+  min-width: 40px;
+}
+
+.floating-btn:hover {
+  color: var(--color-primary);
+  background: rgba(164, 255, 175, 0.05);
+}
+
+.floating-text {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .floating-contact {
+    top: 80%;
+  }
+
+  .floating-text {
+    display: none;
+  }
+}

@@ -9,8 +9,8 @@ test('renders password generator heading', () => {
 
 test('renders generate button', () => {
   render(<App />);
-  const button = screen.getByRole('button', { name: /generate/i });
-  expect(button).toBeInTheDocument();
+  const buttons = screen.getAllByRole('button', { name: /generate/i });
+  expect(buttons.length).toBeGreaterThanOrEqual(1);
 });
 
 test('renders character length slider', () => {
